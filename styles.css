@@ -873,3 +873,165 @@ nav {
         text-align: center;
     }
 }
+
+/* Header */
+header {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    position: relative; /* Add position relative to nav */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px; /* Increased size */
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem; /* Increased size */
+    color: var(--primary-blue);
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-img {
+    transform: scale(1.1);
+}
+
+.logo-container:hover .logo-text {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 1.1rem; /* Increased size */
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+    background-color: rgba(26, 75, 140, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Service items */
+.service-item {
+    text-align: center;
+    margin: 15px;
+    width: 180px; /* Increased width */
+    padding: 25px 20px; /* Increased padding */
+    border-radius: 12px; /* Increased border radius */
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-15px); /* Increased transform effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-item i {
+    font-size: 3rem; /* Increased icon size */
+    color: var(--primary-blue);
+    margin-bottom: 20px; /* Increased margin */
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 5%; /* Position hamburger menu to the right */
+        top: 15px;
+        z-index: 1001; /* Ensure hamburger is above other elements */
+    }
+
+    .logo-container {
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .logo-img {
+        height: 50px; /* Slightly smaller on mobile */
+    }
+
+    .logo-text {
+        font-size: 1.5rem; /* Slightly smaller on mobile */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem; /* Slightly larger on mobile */
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Service items on mobile */
+    .service-item {
+        width: 160px; /* Slightly smaller on mobile */
+        padding: 20px 15px;
+    }
+
+    .service-item i {
+        font-size: 2.5rem; /* Slightly smaller on mobile */
+    }
+}
